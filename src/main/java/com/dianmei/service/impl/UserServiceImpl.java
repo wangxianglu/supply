@@ -1,9 +1,9 @@
-package com.company.project.service.impl;
+package com.dianmei.service.impl;
 
-import com.company.project.dao.UserMapper;
-import com.company.project.model.User;
-import com.company.project.service.UserService;
-import com.company.project.core.AbstractService;
+import com.dianmei.dao.UserMapper;
+import com.dianmei.model.User;
+import com.dianmei.service.UserService;
+import com.dianmei.core.AbstractService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

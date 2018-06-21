@@ -1,8 +1,8 @@
-package com.company.project.web;
-import com.company.project.core.Result;
-import com.company.project.core.ResultGenerator;
-import com.company.project.model.User;
-import com.company.project.service.UserService;
+package com.dianmei.controller;
+import com.dianmei.core.Result;
+import com.dianmei.core.ResultGenerator;
+import com.dianmei.model.User;
+import com.dianmei.service.UserService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.PostMapping;
