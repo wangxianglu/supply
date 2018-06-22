@@ -1,4 +1,4 @@
-package com.dianmei.configurer;
+package com.dianmei.configuration;
 
 import com.dianmei.core.ProjectConstant;
 import com.github.pagehelper.PageHelper;
@@ -26,7 +26,7 @@ public class MybatisConfigurer {
         factory.setDataSource(dataSource);
         factory.setTypeAliasesPackage(ProjectConstant.MODEL_PACKAGE);
 
-        //配置分页插件，详情请查阅官方文档
+        //配置分页插件
         PageHelper pageHelper = new PageHelper();
         Properties properties = new Properties();
         properties.setProperty("pageSizeZero", "true");//分页尺寸为0时查询所有纪录不再执行分页

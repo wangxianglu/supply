@@ -7,3 +7,8 @@ spring:
     add-mappings: true
 banner:
   location: banner-cnm.txt
+
+logging:
+  level:
+    com:
+      dianmei: debug

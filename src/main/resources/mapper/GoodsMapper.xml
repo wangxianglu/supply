@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dianmei.dao.GoodsMapper">
+
+    <resultMap id="BaseResultMap" type="com.dianmei.model.Goods">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="goods_id" jdbcType="INTEGER" property="id"/>
+        <result column="goods_name" jdbcType="VARCHAR" property="goodsName"/>
+        <result column="goods_type_id" jdbcType="INTEGER" property="goodsTypeId"/>
+        <result column="bar_code" jdbcType="VARCHAR" property="barCode"/>
+        <result column="brand_id" jdbcType="INTEGER" property="brandId"/>
+        <result column="company_id" jdbcType="INTEGER" property="companyId"/>
+        <result column="goods_intro" jdbcType="VARCHAR" property="goodsIntro"/>
+        <result column="goods_thumb" jdbcType="VARCHAR" property="goodsThumb"/>
+        <result column="is_sale" jdbcType="BIT" property="isSale"/>
+        <result column="is_book" jdbcType="BIT" property="isBook"/>
+        <result column="min_Inventory" jdbcType="DECIMAL" property="minInventory"/>
+        <result column="goods_unit" jdbcType="VARCHAR" property="goodsUnit"/>
+        <result column="sub_number" jdbcType="INTEGER" property="subNumber"/>
+        <result column="add_time" jdbcType="TIMESTAMP" property="addTime"/>
+        <result column="start_time" jdbcType="TIMESTAMP" property="startTime"/>
+        <result column="supply_days" jdbcType="INTEGER" property="supplyDays"/>
+        <result column="goods_price" jdbcType="DECIMAL" property="goodsPrice"/>
+        <result column="book_price" jdbcType="DECIMAL" property="bookPrice"/>
+        <result column="transport_price" jdbcType="DECIMAL" property="transportPrice"/>
+        <result column="attribute_id" jdbcType="INTEGER" property="attributeId"/>
+        <result column="sc_order_id" jdbcType="INTEGER" property="scOrderId"/>
+        <result column="send_source_flag" jdbcType="TINYINT" property="sendSourceFlag"/>
+        <result column="send_house_id" jdbcType="INTEGER" property="sendHouseId"/>
+        <result column="send_supplier_id" jdbcType="INTEGER" property="sendSupplierId"/>
+        <result column="goods_showImage" jdbcType="VARCHAR" property="goodsShowimage"/>
+        <result column="goods_no" jdbcType="VARCHAR" property="goodsNo"/>
+        <result column="store_price" jdbcType="DECIMAL" property="storePrice"/>
+        <result column="sale_price" jdbcType="DECIMAL" property="salePrice"/>
+        <result column="product_id" jdbcType="INTEGER" property="productId"/>
+        <result column="start_code" jdbcType="VARCHAR" property="startCode"/>
+        <result column="end_code" jdbcType="VARCHAR" property="endCode"/>
+        <result column="batch_no" jdbcType="VARCHAR" property="batchNo"/>
+        <result column="is_card" jdbcType="INTEGER" property="isCard"/>
+        <result column="percolate_type" jdbcType="INTEGER" property="percolateType"/>
+        <result column="percolate_num" jdbcType="VARCHAR" property="percolateNum"/>
+        <result column="goods_status" jdbcType="INTEGER" property="goodsStatus"/>
+        <result column="is_new" jdbcType="INTEGER" property="isNew"/>
+        <result column="goods_show_image" jdbcType="VARCHAR" property="goodsShowImage"/>
+    </resultMap>
+
+    <resultMap id="goodsTableMap" type="com.dianmei.model.Goods">
+        <result column="company_name" jdbcType="VARCHAR" property="companyName"/>
+        <result column="storage_name" jdbcType="VARCHAR" property="storageName"/>
+        <result column="brand_name" jdbcType="VARCHAR" property="brandName"/>
+    </resultMap>
+
+    <select id="selectGoods" resultMap="goodsTableMap">
+        SELECT
+	      goods.*, company.COMPANYNAME,
+	      brand.BRANDNAME AS brandName,
+	      storages.house_name AS storageName
+        FROM
+    	  sc_goods AS goods
+        LEFT JOIN bm_company AS company ON goods.company_id = company.COMPANYID
+        LEFT JOIN bm_brand AS brand ON brand.BRANDID = goods.brand_id
+        LEFT JOIN sc_storage AS storages ON storages.house_id = goods.send_house_id
+    </select>
+
+</mapper>

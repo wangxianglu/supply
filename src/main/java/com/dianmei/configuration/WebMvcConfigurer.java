@@ -1,4 +1,4 @@
-package com.dianmei.configurer;
+package com.dianmei.configuration;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -41,6 +41,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
 
     private final Logger logger = LoggerFactory.getLogger(WebMvcConfigurer.class);
+
     @Value("${spring.profiles.active}")
     private String env;//当前激活的配置文件
 

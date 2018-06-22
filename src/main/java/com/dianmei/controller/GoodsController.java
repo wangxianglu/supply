@@ -1,14 +1,14 @@
-package com.dianmei.web;
+package com.dianmei.controller;
 import com.dianmei.core.Result;
 import com.dianmei.core.ResultGenerator;
+import com.dianmei.dto.TableViewDto;
 import com.dianmei.model.Goods;
-import com.dianmei.service.ScGoodsService;
+import com.dianmei.service.GoodsService;
+import com.dianmei.vo.GoodsTableVo;
+import com.dianmei.vo.TableViewVo;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -17,10 +17,10 @@ import java.util.List;
 * Created by wangxianglu on 2018/06/21.
 */
 @RestController
-@RequestMapping("/sc/goods")
-public class ScGoodsController {
+@RequestMapping("/goods")
+public class GoodsController {
     @Resource
-    private ScGoodsService scGoodsService;
+    private GoodsService scGoodsService;
 
     @PostMapping("/add")
     public Result add(Goods scGoods) {
@@ -47,10 +47,11 @@ public class ScGoodsController {
     }
 
     @PostMapping("/list")
-    public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
-        PageHelper.startPage(page, size);
-        List<Goods> list = scGoodsService.findAll();
+    public TableViewDto list(@RequestBody GoodsTableVo goodsTableVo) {
+
+        goodsTableVo = goodsTableVo.getParams();
+        List<Goods> list = scGoodsService.findList(goodsTableVo.getOffset(), goodsTableVo.getLimit());
         PageInfo pageInfo = new PageInfo(list);
-        return ResultGenerator.genSuccessResult(pageInfo);
+        return new TableViewDto(list, pageInfo.getTotal());
     }
 }
