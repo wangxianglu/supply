@@ -11,5 +11,6 @@ import java.util.List;
  */
 public interface GoodsService extends Service<Goods> {
 
-    List<Goods> findList(int start, int end);
+    List<Goods> findGoodsList(int start, int end, String goodsNo, String goodsName, String barCode, String brandCode, String storageCode,
+                         String supplierCode, boolean isBook, boolean isSale);
 }

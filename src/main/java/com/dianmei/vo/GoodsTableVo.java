@@ -29,11 +29,11 @@ public class GoodsTableVo extends TableViewVo {
     private String goodsNo;
     private String goodsName;
     private String barCode;
-    private String companyId;
-    private String isSale;
-    private String isBook;
-    private String sendHouseId;
-    private String sendSupplierId;
+    private String brandCode;
+    private boolean isSale;
+    private boolean isBook;
+    private String storageCode;
+    private String supplierCode;
 
     public GoodsTableVo getParams() {
         if(!StringUtils.isEmpty(getFilter())) {
@@ -41,11 +41,11 @@ public class GoodsTableVo extends TableViewVo {
             this.goodsNo = tableVo.getGoodsNo();
             this.goodsName = tableVo.getGoodsName();
             this.barCode = tableVo.getBarCode();
-            this.companyId = tableVo.getCompanyId();
-            this.isSale = tableVo.getIsSale();
-            this.isBook = tableVo.getIsBook();
-            this.sendHouseId = tableVo.getSendHouseId();
-            this.sendSupplierId = tableVo.getSendSupplierId();
+            this.brandCode = tableVo.getBarCode();
+            this.isSale = tableVo.isSale();
+            this.isBook = tableVo.isBook();
+            this.storageCode = tableVo.getStorageCode();
+            this.supplierCode = tableVo.getSupplierCode();
         }
         return this;
     }

@@ -42,26 +42,65 @@
         <result column="percolate_type" jdbcType="INTEGER" property="percolateType"/>
         <result column="percolate_num" jdbcType="VARCHAR" property="percolateNum"/>
         <result column="goods_status" jdbcType="INTEGER" property="goodsStatus"/>
-        <result column="is_new" jdbcType="INTEGER" property="isNew"/>
         <result column="goods_show_image" jdbcType="VARCHAR" property="goodsShowImage"/>
     </resultMap>
 
-    <resultMap id="goodsTableMap" type="com.dianmei.model.Goods">
-        <result column="company_name" jdbcType="VARCHAR" property="companyName"/>
+    <resultMap id="goodsTableMap" type="com.dianmei.model.Goods" extends="BaseResultMap">
+        <result column="supplier_name" jdbcType="VARCHAR" property="supplierName"/>
         <result column="storage_name" jdbcType="VARCHAR" property="storageName"/>
         <result column="brand_name" jdbcType="VARCHAR" property="brandName"/>
+        <result column="attribute_name" jdbcType="VARCHAR" property="attributeName"/>
     </resultMap>
 
+    <!-- 查询产品基础查询(多表联合查询) -->
     <select id="selectGoods" resultMap="goodsTableMap">
         SELECT
-	      goods.*, company.COMPANYNAME,
-	      brand.BRANDNAME AS brandName,
-	      storages.house_name AS storageName
+	      goods.*,
+	      company.COMPANYNAME AS supplier_name,
+	      brand.BRANDNAME AS brand_name,
+	      storages.house_name AS storage_name,
+	      dictionary.NAME AS attribute_name
         FROM
     	  sc_goods AS goods
-        LEFT JOIN bm_company AS company ON goods.company_id = company.COMPANYID
+        LEFT JOIN bm_company AS company ON goods.send_supplier_id = company.COMPANYID
         LEFT JOIN bm_brand AS brand ON brand.BRANDID = goods.brand_id
         LEFT JOIN sc_storage AS storages ON storages.house_id = goods.send_house_id
+        LEFT JOIN mm_dictionary AS dictionary  ON dictionary.ID = goods.attribute_id
+        <where>
+            <if test="goodsNo != null">
+                <bind name="goodsNoPattern" value="'%' + goodsNo + '%'" />
+                goods.goods_no like #{goodsNoPattern}
+            </if>
+            <if test="goodsName != null">
+                <bind name="goodsNamePattern" value="'%' + goodsName + '%'" />
+                AND goods.goods_name = #{goodsNamePattern}
+            </if>
+            <if test="barCode != null">
+                <bind name="barCodePattern" value="'%' + barCode + '%'" />
+                AND goods.bar_code = #{barCodePattern}
+            </if>
+            <if test="brandCode != null">
+                <bind name="brandCodePattern" value="'%' + brandCode + '%'" />
+                AND brand.CODE = #{brandCodePattern}
+            </if>
+            <if test="isBook != null">
+                AND goods.is_book = #{isBook}
+            </if>
+            <if test="isSale != null">
+                AND goods.is_sale = #{isSale}
+            </if>
+            <if test="storageCode != storageCode">
+                <bind name="storageCodePattern" value="'%' + storageCode + '%'" />
+                AND storage.house_no = #{storageCodePattern}
+            </if>
+            <if test="supplierCode != supplierCode">
+                <bind name="supplierCodePattern" value="'%' + supplierCode + '%'" />
+                AND company.NUMBER. = #{supplierCodePattern}
+            </if>
+            <if test="isCard != null">
+                AND goods.is_card = #{isCard}
+            </if>
+        </where>
     </select>
 
 </mapper>

@@ -1,12 +1,11 @@
 package com.dianmei.controller;
+
 import com.dianmei.core.Result;
 import com.dianmei.core.ResultGenerator;
 import com.dianmei.dto.TableViewDto;
 import com.dianmei.model.Goods;
 import com.dianmei.service.GoodsService;
 import com.dianmei.vo.GoodsTableVo;
-import com.dianmei.vo.TableViewVo;
-import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.*;
 
@@ -47,10 +46,13 @@ public class GoodsController {
     }
 
     @PostMapping("/list")
-    public TableViewDto list(@RequestBody GoodsTableVo goodsTableVo) {
+    public TableViewDto list(@RequestBody GoodsTableVo tableVo) {
 
-        goodsTableVo = goodsTableVo.getParams();
-        List<Goods> list = scGoodsService.findList(goodsTableVo.getOffset(), goodsTableVo.getLimit());
+        tableVo = tableVo.getParams();
+        List<Goods> list = scGoodsService.findGoodsList(tableVo.getOffset(), tableVo.getLimit(),
+                tableVo.getGoodsNo(), tableVo.getGoodsName(), tableVo.getBarCode(),
+                tableVo.getBrandCode(), tableVo.getStorageCode(), tableVo.getSupplierCode(),
+                tableVo.isBook(), tableVo.isSale());
         PageInfo pageInfo = new PageInfo(list);
         return new TableViewDto(list, pageInfo.getTotal());
     }

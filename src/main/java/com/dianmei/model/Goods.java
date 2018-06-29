@@ -222,9 +222,9 @@ public class Goods {
     @Column(name = "goods_show_image")
     private String goodsShowImage;
 
-    private String companyName; //公司名称
+    private String supplierName; //供应商名称
     private String brandName; //品牌名称
     private String storageName; //仓库名称
-
+    private String attributeName; // 属性名称
 
 }
