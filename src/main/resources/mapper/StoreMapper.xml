@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dianmei.dao.StoreMapper">
+  <resultMap id="BaseResultMap" type="com.dianmei.model.Store">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="STOREID" jdbcType="INTEGER" property="storeid" />
+    <result column="STORENAME" jdbcType="VARCHAR" property="storename" />
+    <result column="STORENUMBER" jdbcType="INTEGER" property="storenumber" />
+    <result column="STORESHORTNUM" jdbcType="VARCHAR" property="storeshortnum" />
+    <result column="CODE" jdbcType="VARCHAR" property="code" />
+    <result column="VERSION" jdbcType="BIGINT" property="version" />
+    <result column="MEMO" jdbcType="VARCHAR" property="memo" />
+    <result column="CREATEDATE" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="UPDATEDATE" jdbcType="TIMESTAMP" property="updatedate" />
+    <result column="STOREPROVINCE" jdbcType="INTEGER" property="storeprovince" />
+    <result column="STORECITY" jdbcType="INTEGER" property="storecity" />
+    <result column="STOREDISTRICT" jdbcType="INTEGER" property="storedistrict" />
+    <result column="STORESTREET" jdbcType="VARCHAR" property="storestreet" />
+    <result column="STOREAREACODE" jdbcType="VARCHAR" property="storeareacode" />
+    <result column="STOREADDRESS" jdbcType="VARCHAR" property="storeaddress" />
+    <result column="STORELAT" jdbcType="VARCHAR" property="storelat" />
+    <result column="STORELNG" jdbcType="VARCHAR" property="storelng" />
+    <result column="LEVELTYPE" jdbcType="INTEGER" property="leveltype" />
+    <result column="STOREPHONE" jdbcType="VARCHAR" property="storephone" />
+    <result column="STORETYPE" jdbcType="INTEGER" property="storetype" />
+    <result column="ACTIVITYIMAGES" jdbcType="VARCHAR" property="activityimages" />
+    <result column="DETAIL" jdbcType="VARCHAR" property="detail" />
+    <result column="CREATOR" jdbcType="VARCHAR" property="creator" />
+    <result column="UPDATER" jdbcType="VARCHAR" property="updater" />
+    <result column="NUMBER" jdbcType="VARCHAR" property="number" />
+    <result column="STOREDOORIMAGE" jdbcType="VARCHAR" property="storedoorimage" />
+    <result column="STOREMANID" jdbcType="INTEGER" property="storemanid" />
+    <result column="PRODUCTGROUPID" jdbcType="INTEGER" property="productgroupid" />
+    <result column="STORELOGO" jdbcType="VARCHAR" property="storelogo" />
+    <result column="STARTTIME" jdbcType="TIME" property="starttime" />
+    <result column="CLOSINGTIME" jdbcType="TIME" property="closingtime" />
+    <result column="BRANDID" jdbcType="INTEGER" property="brandid" />
+    <result column="STOREMANAGER" jdbcType="VARCHAR" property="storemanager" />
+    <result column="STOREUSERID" jdbcType="INTEGER" property="storeuserid" />
+    <result column="STORESTATUS" jdbcType="INTEGER" property="storestatus" />
+    <result column="COMPANYID" jdbcType="INTEGER" property="companyid" />
+    <result column="STORECIRCLE" jdbcType="INTEGER" property="storecircle" />
+    <result column="STOREISSHOW" jdbcType="INTEGER" property="storeisshow" />
+    <result column="is_bargain" jdbcType="INTEGER" property="isBargain" />
+    <result column="roser_time" jdbcType="TIMESTAMP" property="roserTime" />
+    <result column="roster_rule" jdbcType="VARCHAR" property="rosterRule" />
+    <result column="sign_url" jdbcType="VARCHAR" property="signUrl" />
+    <result column="supplyCompanyId" jdbcType="INTEGER" property="supplycompanyid" />
+    <result column="salary_control" jdbcType="INTEGER" property="salaryControl" />
+    <result column="pay_route" jdbcType="INTEGER" property="payRoute" />
+    <result column="bed" jdbcType="INTEGER" property="bed" />
+    <result column="chair" jdbcType="INTEGER" property="chair" />
+    <result column="bucket" jdbcType="INTEGER" property="bucket" />
+    <result column="room" jdbcType="INTEGER" property="room" />
+    <result column="distribution_permit" jdbcType="INTEGER" property="distributionPermit" />
+    <result column="STOREIMAGE" jdbcType="LONGVARCHAR" property="storeimage" />
+    <result column="roser1" jdbcType="LONGVARCHAR" property="roser1" />
+    <result column="roser2" jdbcType="LONGVARCHAR" property="roser2" />
+    <result column="roser3" jdbcType="LONGVARCHAR" property="roser3" />
+    <result column="roser4" jdbcType="LONGVARCHAR" property="roser4" />
+    <result column="roser5" jdbcType="LONGVARCHAR" property="roser5" />
+  </resultMap>
+</mapper>

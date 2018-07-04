@@ -69,19 +69,19 @@
         <where>
             <if test="goodsNo != null">
                 <bind name="goodsNoPattern" value="'%' + goodsNo + '%'" />
-                goods.goods_no like #{goodsNoPattern}
+                goods.goods_no LIKE #{goodsNoPattern}
             </if>
             <if test="goodsName != null">
                 <bind name="goodsNamePattern" value="'%' + goodsName + '%'" />
-                AND goods.goods_name = #{goodsNamePattern}
+                AND goods.goods_name LIKE #{goodsNamePattern}
             </if>
             <if test="barCode != null">
                 <bind name="barCodePattern" value="'%' + barCode + '%'" />
-                AND goods.bar_code = #{barCodePattern}
+                AND goods.bar_code LIKE #{barCodePattern}
             </if>
             <if test="brandCode != null">
                 <bind name="brandCodePattern" value="'%' + brandCode + '%'" />
-                AND brand.CODE = #{brandCodePattern}
+                AND (brand.CODE LIKE #{brandCodePattern} OR brand.BRANDNAME LIKE #{brandCodePattern})
             </if>
             <if test="isBook != null">
                 AND goods.is_book = #{isBook}
@@ -89,13 +89,13 @@
             <if test="isSale != null">
                 AND goods.is_sale = #{isSale}
             </if>
-            <if test="storageCode != storageCode">
+            <if test="storageCode != null">
                 <bind name="storageCodePattern" value="'%' + storageCode + '%'" />
-                AND storage.house_no = #{storageCodePattern}
+                AND (storage.house_no LIKE #{storageCodePattern} OR storage.house_name LIKE #{storageCodePattern})
             </if>
-            <if test="supplierCode != supplierCode">
+            <if test="supplierCode != null">
                 <bind name="supplierCodePattern" value="'%' + supplierCode + '%'" />
-                AND company.NUMBER. = #{supplierCodePattern}
+                AND (company.NUMBER LIKE #{supplierCodePattern} OR company.COMPANYNAME LIKE #{supplierCodePattern})
             </if>
             <if test="isCard != null">
                 AND goods.is_card = #{isCard}

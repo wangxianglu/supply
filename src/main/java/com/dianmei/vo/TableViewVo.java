@@ -15,11 +15,11 @@ import lombok.Setter;
 @Setter
 public abstract class TableViewVo {
 
-    private String search; //查询条件
-    private String sort; // 排序属性
-    private String order; // 排序方式
+    private String search = ""; //查询条件
+    private String sort = ""; // 排序属性
+    private String order = ""; // 排序方式
     private int offset; // 起始
     private int limit; // 偏移量
-    private String filter; //过滤字符串
+    private String filter = ""; //过滤字符串
 
 }

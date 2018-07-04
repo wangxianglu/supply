@@ -29,11 +29,11 @@ public class GoodsTableVo extends TableViewVo {
     private String goodsNo;
     private String goodsName;
     private String barCode;
-    private String brandCode;
+    private String brandName;
     private boolean isSale;
     private boolean isBook;
-    private String storageCode;
-    private String supplierCode;
+    private String storageName;
+    private String supplierName;
 
     public GoodsTableVo getParams() {
         if(!StringUtils.isEmpty(getFilter())) {
@@ -41,12 +41,45 @@ public class GoodsTableVo extends TableViewVo {
             this.goodsNo = tableVo.getGoodsNo();
             this.goodsName = tableVo.getGoodsName();
             this.barCode = tableVo.getBarCode();
-            this.brandCode = tableVo.getBarCode();
+            this.brandName = tableVo.getBrandName();
             this.isSale = tableVo.isSale();
             this.isBook = tableVo.isBook();
-            this.storageCode = tableVo.getStorageCode();
-            this.supplierCode = tableVo.getSupplierCode();
+            this.storageName = tableVo.getStorageName();
+            this.supplierName = tableVo.getSupplierName();
         }
         return this;
+    }
+
+    /**
+     * 针对 产品列表做的排序规则
+     * @return
+     */
+    public String pageHelperSortRule() {
+
+        if(getSort().equals("goodsNo")) {
+            return "goods_no " + getOrder();
+        } else if (getSort().equals("goodsName")) {
+            return "goods_name " + getOrder();
+        } else if (getSort().equals("barCode")) {
+            return "bar_code " + getOrder();
+        } else if (getSort().equals("brandName")) {
+            return "brand_name " + getOrder();
+        } else if (getSort().equals("storageName")) {
+            return "storage_name " + getOrder();
+        } else if (getSort().equals("supplierName")) {
+            return "supplier_name " + getOrder();
+        } else if (getSort().equals("storePrice")) {
+            return "store_price " + getOrder();
+        } else if (getSort().equals("attributeName")) {
+            return "attribute_name " + getOrder();
+        } else if (getSort().equals("isSale")) {
+            return "is_sale " + getOrder();
+        } else if (getSort().equals("isBook")) {
+            return "is_book " + getOrder();
+        } else if (getSort().equals("goodsStatus")) {
+            return "goods_status " + getOrder();
+        } else {
+            return "goods_id desc"; //默认使用ID 进行倒序
+        }
     }
 }

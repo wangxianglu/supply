@@ -51,8 +51,8 @@ public class GoodsController {
         tableVo = tableVo.getParams();
         List<Goods> list = scGoodsService.findGoodsList(tableVo.getOffset(), tableVo.getLimit(),
                 tableVo.getGoodsNo(), tableVo.getGoodsName(), tableVo.getBarCode(),
-                tableVo.getBrandCode(), tableVo.getStorageCode(), tableVo.getSupplierCode(),
-                tableVo.isBook(), tableVo.isSale());
+                tableVo.getBrandName(), tableVo.getStorageName(), tableVo.getSupplierName(),
+                tableVo.isBook(), tableVo.isSale(), tableVo.pageHelperSortRule());
         PageInfo pageInfo = new PageInfo(list);
         return new TableViewDto(list, pageInfo.getTotal());
     }

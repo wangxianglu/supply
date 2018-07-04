@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dianmei.dao.CompanyMapper">
+  <resultMap id="BaseResultMap" type="com.dianmei.model.Company">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="COMPANYID" jdbcType="INTEGER" property="companyid" />
+    <result column="SHORTNAME" jdbcType="VARCHAR" property="shortname" />
+    <result column="COMPANYNAME" jdbcType="VARCHAR" property="companyname" />
+    <result column="COMENGNAME" jdbcType="VARCHAR" property="comengname" />
+    <result column="PARENTID" jdbcType="INTEGER" property="parentid" />
+    <result column="into_s3" jdbcType="BIT" property="intoS3" />
+    <result column="BRANDID" jdbcType="INTEGER" property="brandid" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="COMPANYTYPE" jdbcType="INTEGER" property="companytype" />
+    <result column="COMPANYLEVEL" jdbcType="INTEGER" property="companylevel" />
+    <result column="CODE" jdbcType="VARCHAR" property="code" />
+    <result column="is_bargain" jdbcType="INTEGER" property="isBargain" />
+    <result column="VERSION" jdbcType="BIGINT" property="version" />
+    <result column="CREATEDATE" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="CREATOR" jdbcType="VARCHAR" property="creator" />
+    <result column="UPDATEDATE" jdbcType="TIMESTAMP" property="updatedate" />
+    <result column="UPDATER" jdbcType="VARCHAR" property="updater" />
+    <result column="NUMBER" jdbcType="VARCHAR" property="number" />
+    <result column="ENGLISHNAME" jdbcType="VARCHAR" property="englishname" />
+    <result column="PHONE" jdbcType="VARCHAR" property="phone" />
+    <result column="FAX" jdbcType="VARCHAR" property="fax" />
+    <result column="INVOICEADDRESS" jdbcType="VARCHAR" property="invoiceaddress" />
+    <result column="COMLICENSE" jdbcType="VARCHAR" property="comlicense" />
+    <result column="TAXATION" jdbcType="VARCHAR" property="taxation" />
+    <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+    <result column="PRINCIPAL" jdbcType="VARCHAR" property="principal" />
+    <result column="COMPROVINCE" jdbcType="INTEGER" property="comprovince" />
+    <result column="COMCITY" jdbcType="INTEGER" property="comcity" />
+    <result column="COMDISTRICT" jdbcType="INTEGER" property="comdistrict" />
+    <result column="COMADDRESS" jdbcType="VARCHAR" property="comaddress" />
+    <result column="COMAREACODE" jdbcType="VARCHAR" property="comareacode" />
+    <result column="COMPANYLOGO" jdbcType="VARCHAR" property="companylogo" />
+    <result column="PRODUCTGROUPID" jdbcType="INTEGER" property="productgroupid" />
+    <result column="ADMINID" jdbcType="INTEGER" property="adminid" />
+    <result column="COMSYSLEVEL" jdbcType="INTEGER" property="comsyslevel" />
+    <result column="PRODUCTCOMID" jdbcType="INTEGER" property="productcomid" />
+    <result column="supplyCompanyId" jdbcType="INTEGER" property="supplycompanyid" />
+    <result column="website" jdbcType="VARCHAR" property="website" />
+    <result column="legalperson" jdbcType="VARCHAR" property="legalperson" />
+    <result column="dutysign" jdbcType="VARCHAR" property="dutysign" />
+    <result column="license" jdbcType="VARCHAR" property="license" />
+    <result column="contacts" jdbcType="VARCHAR" property="contacts" />
+    <result column="companyrankid" jdbcType="INTEGER" property="companyrankid" />
+    <result column="contactsphone" jdbcType="VARCHAR" property="contactsphone" />
+    <result column="contactsemail" jdbcType="VARCHAR" property="contactsemail" />
+    <result column="contactswechat" jdbcType="VARCHAR" property="contactswechat" />
+    <result column="businesshours" jdbcType="VARCHAR" property="businesshours" />
+    <result column="distribution_permit" jdbcType="INTEGER" property="distributionPermit" />
+    <result column="MEMO" jdbcType="LONGVARCHAR" property="memo" />
+  </resultMap>
+</mapper>
