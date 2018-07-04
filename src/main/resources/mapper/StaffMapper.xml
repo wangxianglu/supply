@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dianmei.dao.StaffMapper">
+  <resultMap id="BaseResultMap" type="com.dianmei.model.Staff">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="STAFFINFOID" jdbcType="BIGINT" property="staffinfoid" />
+    <result column="STAFFID" jdbcType="INTEGER" property="staffid" />
+    <result column="STAFFICO" jdbcType="VARCHAR" property="staffico" />
+    <result column="STAFFNAME" jdbcType="VARCHAR" property="staffname" />
+    <result column="STAFFNICKNAME" jdbcType="VARCHAR" property="staffnickname" />
+    <result column="STAFFONLY" jdbcType="VARCHAR" property="staffonly" />
+    <result column="STAFFNUMBER" jdbcType="VARCHAR" property="staffnumber" />
+    <result column="account_balance" jdbcType="DECIMAL" property="accountBalance" />
+    <result column="PHONE" jdbcType="VARCHAR" property="phone" />
+    <result column="COMPANYID" jdbcType="INTEGER" property="companyid" />
+    <result column="STOREID" jdbcType="INTEGER" property="storeid" />
+    <result column="store_name" jdbcType="VARCHAR" property="storeName" />
+    <result column="store_address" jdbcType="VARCHAR" property="storeAddress" />
+    <result column="HIREDTYPE" jdbcType="VARCHAR" property="hiredtype" />
+    <result column="ARRIVEDATE" jdbcType="DATE" property="arrivedate" />
+    <result column="LEAVEDATE" jdbcType="DATE" property="leavedate" />
+    <result column="EXTENSION" jdbcType="VARCHAR" property="extension" />
+    <result column="CERTIFICATE" jdbcType="VARCHAR" property="certificate" />
+    <result column="COMPANYRANKNAME" jdbcType="VARCHAR" property="companyrankname" />
+    <result column="COMPANYRANKID" jdbcType="BIGINT" property="companyrankid" />
+    <result column="RANKID" jdbcType="INTEGER" property="rankid" />
+    <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+    <result column="WECHAT" jdbcType="VARCHAR" property="wechat" />
+    <result column="WEIBO" jdbcType="VARCHAR" property="weibo" />
+    <result column="QQ" jdbcType="VARCHAR" property="qq" />
+    <result column="GENDER" jdbcType="TINYINT" property="gender" />
+    <result column="BIRTHDAY" jdbcType="DATE" property="birthday" />
+    <result column="IDCARD" jdbcType="VARCHAR" property="idcard" />
+    <result column="STAFFSTATUS" jdbcType="INTEGER" property="staffstatus" />
+    <result column="PTYPEID" jdbcType="INTEGER" property="ptypeid" />
+    <result column="STARS" jdbcType="INTEGER" property="stars" />
+    <result column="STARSA" jdbcType="INTEGER" property="starsa" />
+    <result column="STARSB" jdbcType="INTEGER" property="starsb" />
+    <result column="STARSC" jdbcType="INTEGER" property="starsc" />
+    <result column="STARSD" jdbcType="INTEGER" property="starsd" />
+    <result column="WINNING" jdbcType="VARCHAR" property="winning" />
+    <result column="SPECIALTY" jdbcType="VARCHAR" property="specialty" />
+    <result column="RANKINGINSTORE" jdbcType="INTEGER" property="rankinginstore" />
+    <result column="RANKINGINAPP" jdbcType="INTEGER" property="rankinginapp" />
+    <result column="SPECIALITYYEARS" jdbcType="INTEGER" property="specialityyears" />
+    <result column="PROMPLACE" jdbcType="INTEGER" property="promplace" />
+    <result column="USERLNG" jdbcType="VARCHAR" property="userlng" />
+    <result column="USERLAT" jdbcType="VARCHAR" property="userlat" />
+    <result column="USERDIS" jdbcType="VARCHAR" property="userdis" />
+    <result column="UPVOTES" jdbcType="INTEGER" property="upvotes" />
+    <result column="STAFFLOGO" jdbcType="VARCHAR" property="stafflogo" />
+    <result column="ENABLE" jdbcType="INTEGER" property="enable" />
+    <result column="brand_id" jdbcType="INTEGER" property="brandId" />
+    <result column="orders_number" jdbcType="INTEGER" property="ordersNumber" />
+    <result column="starting_price" jdbcType="DECIMAL" property="startingPrice" />
+    <result column="roster" jdbcType="VARCHAR" property="roster" />
+    <result column="CODE" jdbcType="VARCHAR" property="code" />
+    <result column="VERSION" jdbcType="BIGINT" property="version" />
+    <result column="CREATEDATE" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="CREATOR" jdbcType="VARCHAR" property="creator" />
+    <result column="UPDATEDATE" jdbcType="TIMESTAMP" property="updatedate" />
+    <result column="UPDATOR" jdbcType="VARCHAR" property="updator" />
+    <result column="MEMO" jdbcType="VARCHAR" property="memo" />
+    <result column="check_in_out" jdbcType="INTEGER" property="checkInOut" />
+    <result column="check_time" jdbcType="TIMESTAMP" property="checkTime" />
+    <result column="account_name" jdbcType="VARCHAR" property="accountName" />
+    <result column="card_number" jdbcType="VARCHAR" property="cardNumber" />
+    <result column="bank_area_id" jdbcType="INTEGER" property="bankAreaId" />
+    <result column="bank_name" jdbcType="VARCHAR" property="bankName" />
+    <result column="educational_background" jdbcType="INTEGER" property="educationalBackground" />
+    <result column="health_no" jdbcType="VARCHAR" property="healthNo" />
+    <result column="health_time" jdbcType="DATE" property="healthTime" />
+    <result column="usebanktype" jdbcType="INTEGER" property="usebanktype" />
+    <result column="usecreditcardno" jdbcType="VARCHAR" property="usecreditcardno" />
+    <result column="idcardaddress" jdbcType="VARCHAR" property="idcardaddress" />
+    <result column="contactsname" jdbcType="VARCHAR" property="contactsname" />
+    <result column="contactsphone" jdbcType="VARCHAR" property="contactsphone" />
+    <result column="contactsaddress" jdbcType="VARCHAR" property="contactsaddress" />
+    <result column="basesalary" jdbcType="DECIMAL" property="basesalary" />
+    <result column="salarytype" jdbcType="INTEGER" property="salarytype" />
+    <result column="guaranteedsalary" jdbcType="DECIMAL" property="guaranteedsalary" />
+    <result column="guaranteeddate" jdbcType="TIMESTAMP" property="guaranteeddate" />
+    <result column="contract_time" jdbcType="TIMESTAMP" property="contractTime" />
+    <result column="introducer" jdbcType="VARCHAR" property="introducer" />
+    <result column="stafflevel" jdbcType="INTEGER" property="stafflevel" />
+    <result column="performancetype" jdbcType="INTEGER" property="performancetype" />
+    <result column="performancerate" jdbcType="DECIMAL" property="performancerate" />
+    <result column="positiontitle" jdbcType="VARCHAR" property="positiontitle" />
+    <result column="blacklistflag" jdbcType="INTEGER" property="blacklistflag" />
+    <result column="reservation_phone" jdbcType="VARCHAR" property="reservationPhone" />
+    <result column="is_star" jdbcType="INTEGER" property="isStar" />
+    <result column="idCard_url" jdbcType="VARCHAR" property="idcardUrl" />
+    <result column="showStore" jdbcType="VARCHAR" property="showstore" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="school_wid" jdbcType="VARCHAR" property="schoolWid" />
+    <result column="INTRODUCTION" jdbcType="LONGVARCHAR" property="introduction" />
+    <result column="STAFFLOGO_GROUP" jdbcType="LONGVARCHAR" property="stafflogoGroup" />
+  </resultMap>
+</mapper>
