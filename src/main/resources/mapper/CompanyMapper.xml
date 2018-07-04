@@ -55,4 +55,12 @@
     <result column="distribution_permit" jdbcType="INTEGER" property="distributionPermit" />
     <result column="MEMO" jdbcType="LONGVARCHAR" property="memo" />
   </resultMap>
+
+  <select id="findByIdsAndType" parameterMap="java.util.Map" resultMap="BaseResultMap">
+	SELECT * FROM BM_COMPANY WHERE COMPANYTYPE = #{companyType} AND COMPANYID  IN
+    <foreach collection="ids" item="id" index="index" open="(" separator="," close=")">
+      #{id}
+    </foreach>
+  </select>
+
 </mapper>

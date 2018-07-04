@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -17,6 +19,15 @@ import javax.annotation.Resource;
 @Transactional
 public class StoreServiceImpl extends AbstractService<Store> implements StoreService {
     @Resource
-    private StoreMapper bmStoreMapper;
+    private StoreMapper storeMapper;
+
+    @Override
+    public List<Store> findByIds(Set<Integer> ids) {
+        StringBuffer idsStr = new StringBuffer();
+        for(Integer id : ids) {
+            idsStr.append(id + ",");
+        }
+        return storeMapper.selectByIds(idsStr.toString());
+    }
 
 }
